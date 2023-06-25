@@ -1,0 +1,426 @@
+{
+	"info": {
+		"_postman_id": "61310e10-6fa7-4a4b-8f1b-a51cf7770ad4",
+		"name": "Dadata",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24516317"
+	},
+	"item": [
+		{
+			"name": "Поиск по ИНН и  ОГРН",
+			"item": [
+				{
+					"name": "Получение организации по ИНН",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"query\": \"7707083893\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/suggestions/api/4_1/rs/findById/party",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"suggestions",
+								"api",
+								"4_1",
+								"rs",
+								"findById",
+								"party"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Получение головной организации по ИНН",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"query\": \"7707083893\",\r\n\"branch_type\": \"MAIN\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/suggestions/api/4_1/rs/findById/party",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"suggestions",
+								"api",
+								"4_1",
+								"rs",
+								"findById",
+								"party"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Получение БАНК Тинькофф по ИНН",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"query\": \"7710140679\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/suggestions/api/4_1/rs/findById/party",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"suggestions",
+								"api",
+								"4_1",
+								"rs",
+								"findById",
+								"party"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Получение филиала организации для Западно-Сибирского отделения",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"query\": \"7707083893\",\r\n    \"kpp\": \"540602001\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/suggestions/api/4_1/rs/findById/party",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"suggestions",
+								"api",
+								"4_1",
+								"rs",
+								"findById",
+								"party"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Получение организации по ОГРН",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"query\": \"1026104024737\",\r\n    \"branch_type\": \"MAIN\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/suggestions/api/4_1/rs/findById/party",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"suggestions",
+								"api",
+								"4_1",
+								"rs",
+								"findById",
+								"party"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Поиск аффилированных компаний",
+			"item": [
+				{
+					"name": "Получение аффилированной компании",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true,
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"query\": \"7736207543\",\r\n    \"scope\": [\"FOUNDERS\"]\r\n}"
+						},
+						"url": {
+							"raw": "https://suggestions.dadata.ru/suggestions/api/4_1/rs/findAffiliated/party",
+							"protocol": "https",
+							"host": [
+								"suggestions",
+								"dadata",
+								"ru"
+							],
+							"path": [
+								"suggestions",
+								"api",
+								"4_1",
+								"rs",
+								"findAffiliated",
+								"party"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Поиск по email",
+			"item": [
+				{
+					"name": "Получение организации (Сбербанк)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "X-Secret",
+								"value": "{{secret}}"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"query\": \"sberbank@sberbank.ru\" }"
+						},
+						"url": {
+							"raw": "{{url}}/suggestions/api/4_1/rs/findByEmail/company",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"suggestions",
+								"api",
+								"4_1",
+								"rs",
+								"findByEmail",
+								"company"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Получение организаци (Ситилинк)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{token}}"
+							},
+							{
+								"key": "X-Secret",
+								"value": "{{secret}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"query\": \"Zapros_mgnb2b@citilink.ru\" }"
+						},
+						"url": {
+							"raw": "{{url}}/suggestions/api/4_1/rs/findByEmail/company",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"suggestions",
+								"api",
+								"4_1",
+								"rs",
+								"findByEmail",
+								"company"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Получение организации (ИП Галеев Руслан Рафкатович)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{token}}"
+							},
+							{
+								"key": "X-Secret",
+								"value": "{{secret}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"query\": \"iinfo@navkusicvet.ru\" }"
+						},
+						"url": {
+							"raw": "{{url}}/suggestions/api/4_1/rs/findByEmail/company",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"suggestions",
+								"api",
+								"4_1",
+								"rs",
+								"findByEmail",
+								"company"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "token",
+			"value": "c2dd7b34d44e35bfb746ef8512802b352efb0fc2",
+			"type": "string"
+		},
+		{
+			"key": "secret",
+			"value": "ed66c73e9ef5e9aefb84dd4f47b67e63528514ea",
+			"type": "string"
+		}
+	]
+}
